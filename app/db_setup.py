@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean, Float
 from sqlalchemy.ext.declarative import declarative_base
 
 engine = create_engine(
@@ -41,3 +41,50 @@ class User_session(Base, BaseRepr):
     user_id = Column(Integer)
     session = Column(String)
     last_using = Column(DateTime)
+
+class Tiker(Base, BaseRepr):
+    __tablename__ = 'user_session'
+    id = Column(Integer, primary_key=True)
+    id_tiker = Column(Integer)
+    full_name = Column(String)
+    short_name = Column(String)
+    isin_key = Column(String)
+    state_reg_num = Column(String)
+    output_val = Column(String)
+    trading_start = Column(DateTime)
+
+class Tiker_history_day(Base, BaseRepr):
+    __tablename__ = 'user_session'
+    id = Column(Integer, primary_key=True)
+    id_tiker = Column(Integer)
+    tk_date = Column(DateTime)
+    tk_open = Column(String)
+    tk_close = Column(Float)
+    tk_high = Column(Float)
+    tk_low = Column(Float)
+    tk_value = Column(Float)
+    tk_profitability = Column(Float)
+
+class Tiker_history_week(Base, BaseRepr):
+    __tablename__ = 'user_session'
+    id = Column(Integer, primary_key=True)
+    id_tiker = Column(Integer)
+    tk_date = Column(DateTime)
+    tk_open = Column(String)
+    tk_close = Column(Float)
+    tk_high = Column(Float)
+    tk_low = Column(Float)
+    tk_value = Column(Float)
+    tk_profitability = Column(Float)
+
+class Tiker_history_month(Base, BaseRepr):
+    __tablename__ = 'user_session'
+    id = Column(Integer, primary_key=True)
+    id_tiker = Column(Integer)
+    tk_date = Column(DateTime)
+    tk_open = Column(String)
+    tk_close = Column(Float)
+    tk_high = Column(Float)
+    tk_low = Column(Float)
+    tk_value = Column(Float)
+    tk_profitability = Column(Float)
